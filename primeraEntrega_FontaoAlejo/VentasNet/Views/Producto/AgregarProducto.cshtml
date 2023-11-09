@@ -1,0 +1,24 @@
+﻿@using VentasNet.Infra.DTO.Request;
+@model ProductoRequest
+
+<div class="card-body">
+    <form asp-action="AgregarProducto" method="post">
+        <div class="form-group">
+            <label asp-for="NombreProducto"></label>
+            <input asp-for="NombreProducto" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Descripcion"></label>
+            <input asp-for="Descripcion" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="ImporteProducto"></label>
+            <input asp-for="ImporteProducto" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Codigo"></label>
+            <input asp-for="Codigo" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
+</div>

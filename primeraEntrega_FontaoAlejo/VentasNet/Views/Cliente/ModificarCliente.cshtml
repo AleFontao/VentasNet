@@ -1,0 +1,22 @@
+﻿@using VentasNet.Infra.DTO.Request;
+@model ClienteRequest
+<form asp-action="ModificarCliente" method="post">	
+	<input type="hidden" name="Cuit" value="@Model.Cuit" />
+	<div class="form-group">
+		<label asp-for="Nombre"></label>
+		<input asp-for="Nombre" class="form-control" value="@Model.Nombre" />
+	</div>
+	<div class="form-group">
+		<label asp-for="Apellido"></label>
+		<input asp-for="Apellido" class="form-control" value="@Model.Apellido" />
+	</div>
+	<div class="form-group">
+		<label asp-for="Domicilio"></label>
+		<input asp-for="Domicilio" class="form-control" value="@Model.Domicilio" />
+	</div>
+	<div class="form-group">
+		<label asp-for="Provincia"></label>
+		<input asp-for="Provincia" class="form-control" value="@Model.Provincia" />
+	</div>
+	<button type="submit" class="btn btn-primary">Modificar</button>
+</form>

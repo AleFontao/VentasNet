@@ -1,0 +1,59 @@
+﻿@using VentasNet.Infra.DTO.Request
+@model IEnumerable<ProveedorRequest>
+@{
+	<div class="container mt-5">
+		<h2>Tabla de Proveedores</h2>
+
+		@Html.Partial("AgregarProveedor", new ProveedorRequest())
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Razón Social</th>
+					<th>CUIT</th>
+					<th>Domicilio</th>
+					<th>Provincia</th>
+					<th>Modificar</th>
+					<th>Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (ProveedorRequest proveedor in ViewBag.Proveedor)
+				{
+					<tr>
+						<td>@proveedor.IdProveedor</td>
+						<td>@proveedor.RazonSocial</td>
+						<td>@proveedor.Cuit</td>
+						<td>@proveedor.Domicilio</td>
+						<td>@proveedor.Provincia</td>
+						<td>
+							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalModificarProveedor_@proveedor.IdProveedor">Modificar</button>
+						</td>
+						<td>
+							<form asp-action="EliminarProveedor" method="post">
+								<input type="hidden" name="id" value="@proveedor.IdProveedor" />
+								<button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+							</form>
+						</td>
+					</tr>
+					<div class="modal fade" id="modalModificarProveedor_@proveedor.IdProveedor" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="modalLabel">Modificar Proveedor</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									@Html.Partial("ModificarProveedor", proveedor)
+								</div>
+							</div>
+						</div>
+					</div>
+				}
+
+			</tbody>
+		</table>
+	</div>
+}

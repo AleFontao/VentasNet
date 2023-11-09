@@ -1,0 +1,14 @@
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\bin\Debug\net6.0\VentasNet.Entity.deps.json
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\bin\Debug\net6.0\VentasNet.Entity.dll
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\bin\Debug\net6.0\VentasNet.Entity.pdb
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\obj\Debug\net6.0\VentasNet.Entity.csproj.AssemblyReference.cache
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\obj\Debug\net6.0\VentasNet.Entity.GeneratedMSBuildEditorConfig.editorconfig
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\obj\Debug\net6.0\VentasNet.Entity.AssemblyInfoInputs.cache
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\obj\Debug\net6.0\VentasNet.Entity.AssemblyInfo.cs
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\obj\Debug\net6.0\VentasNet.Entity.csproj.CoreCompileInputs.cache
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\obj\Debug\net6.0\VentasNet.Entity.dll
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\obj\Debug\net6.0\refint\VentasNet.Entity.dll
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\obj\Debug\net6.0\VentasNet.Entity.pdb
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\obj\Debug\net6.0\ref\VentasNet.Entity.dll
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\bin\Debug\net6.0\VentasNet.Entity.runtimeconfig.json
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Entity\obj\Debug\net6.0\VentasNet.Entity.genruntimeconfig.cache

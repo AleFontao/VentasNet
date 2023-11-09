@@ -1,0 +1,100 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\TrabajoPractico1\\TrabajoPractico1.csproj": {}
+  },
+  "projects": {
+    "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\TrabajoPractico1\\TrabajoPractico1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\TrabajoPractico1\\TrabajoPractico1.csproj",
+        "projectName": "TrabajoPractico1",
+        "projectPath": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\TrabajoPractico1\\TrabajoPractico1.csproj",
+        "packagesPath": "C:\\Users\\alefo\\.nuget\\packages\\",
+        "outputPath": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\TrabajoPractico1\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alefo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Firebase.Auth": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "FirebaseAdmin": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2022.12.1, )"
+            },
+            "Rotativa.AspNetCore": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

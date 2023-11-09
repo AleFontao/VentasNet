@@ -1,0 +1,24 @@
+﻿@using VentasNet.Infra.DTO.Request;
+@model ProductoRequest;
+
+<form asp-action="ModificarProducto" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div class="form-group">
+        <label asp-for="NombreProducto"></label>
+        <input asp-for="NombreProducto" class="form-control" value="@Model.NombreProducto" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Descripcion"></label>
+        <input asp-for="Descripcion" class="form-control" value="@Model.Descripcion" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ImporteProducto"></label>
+        <input asp-for="ImporteProducto" class="form-control" value="@Model.ImporteProducto" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Codigo"></label>
+        <input asp-for="Codigo" class="form-control" value="@Model.Codigo" />
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Modificar</button>
+</form>

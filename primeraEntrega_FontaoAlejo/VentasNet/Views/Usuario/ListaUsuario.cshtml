@@ -1,0 +1,53 @@
+﻿@using VentasNet.Infra.DTO.Request;
+@model IEnumerable<UsuarioRequest>
+
+<div class="container mt-5">
+    <h2>Tabla de Usuarios</h2>
+
+    @Html.Partial("AgregarUsuario", new UsuarioRequest())
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+               
+                <th>Modificar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (UsuarioRequest usuario in ViewBag.Usuario)
+            {
+                <tr>
+                    <td>@usuario.IdUsuario</td>
+                    <td>@usuario.Email</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalModificarUsuario_@usuario.IdUsuario">Modificar</button>
+                    </td>
+                    <td>
+                        <form asp-action="EliminarUsuario" method="post">
+                            <input type="hidden" name="id" value="@usuario.IdUsuario" />
+                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                <div class="modal fade" id="modalModificarUsuario_@usuario.IdUsuario" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalLabel">Modificar Usuario</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                @Html.Partial("ModificarUsuario", usuario)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </tbody>
+    </table>
+</div>

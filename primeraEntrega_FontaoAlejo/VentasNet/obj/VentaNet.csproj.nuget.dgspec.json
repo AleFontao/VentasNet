@@ -1,0 +1,277 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\TrabajoPractico1\\VentaNet.csproj": {}
+  },
+  "projects": {
+    "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\TrabajoPractico1\\VentaNet.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\TrabajoPractico1\\VentaNet.csproj",
+        "projectName": "VentaNet",
+        "projectPath": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\TrabajoPractico1\\VentaNet.csproj",
+        "packagesPath": "C:\\Users\\alefo\\.nuget\\packages\\",
+        "outputPath": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\TrabajoPractico1\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alefo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Entity\\VentasNet.Entity.csproj": {
+                "projectPath": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Entity\\VentasNet.Entity.csproj"
+              },
+              "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Infra\\VentasNet.Infra.csproj": {
+                "projectPath": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Infra\\VentasNet.Infra.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Firebase.Auth": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "FirebaseAdmin": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2022.12.1, )"
+            },
+            "Rotativa.AspNetCore": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Entity\\VentasNet.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Entity\\VentasNet.Entity.csproj",
+        "projectName": "VentasNet.Entity",
+        "projectPath": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Entity\\VentasNet.Entity.csproj",
+        "packagesPath": "C:\\Users\\alefo\\.nuget\\packages\\",
+        "outputPath": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alefo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.21, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Infra\\VentasNet.Infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Infra\\VentasNet.Infra.csproj",
+        "projectName": "VentasNet.Infra",
+        "projectPath": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Infra\\VentasNet.Infra.csproj",
+        "packagesPath": "C:\\Users\\alefo\\.nuget\\packages\\",
+        "outputPath": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Infra\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alefo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Entity\\VentasNet.Entity.csproj": {
+                "projectPath": "F:\\TELECOM\\Ejercicios\\primeraEntrega_FontaoAlejo\\VentasNet.Entity\\VentasNet.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Collection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

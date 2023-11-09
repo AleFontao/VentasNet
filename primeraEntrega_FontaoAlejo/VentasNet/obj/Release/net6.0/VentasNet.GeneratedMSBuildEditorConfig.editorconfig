@@ -1,0 +1,105 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = VentasNet
+build_property.RootNamespace = VentasNet
+build_property.ProjectDir = C:\Users\alefo\Projects\DIGITALERSTP\primeraEntrega_FontaoAlejo\VentasNet\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\alefo\Projects\DIGITALERSTP\primeraEntrega_FontaoAlejo\VentasNet
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Cliente/AgregarCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxBZ3JlZ2FyQ2xpZW50ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Cliente/ListaClientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxMaXN0YUNsaWVudGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Cliente/ModificarCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxNb2RpZmljYXJDbGllbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Producto/AgregarProducto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQWdyZWdhclByb2R1Y3RvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Producto/ListaProducto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cTGlzdGFQcm9kdWN0by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Producto/ModificarProducto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cTW9kaWZpY2FyUHJvZHVjdG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Proveedor/AgregarProveedor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXEFncmVnYXJQcm92ZWVkb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Proveedor/ListaProveedor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXExpc3RhUHJvdmVlZG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Proveedor/ModificarProveedor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXE1vZGlmaWNhclByb3ZlZWRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Usuario/AgregarUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xBZ3JlZ2FyVXN1YXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Usuario/ListaUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMaXN0YVVzdWFyaW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Usuario/ModificarUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xNb2RpZmljYXJVc3VhcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Venta/ListaProducto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcTGlzdGFQcm9kdWN0by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Venta/Venta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcVmVudGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alefo/Projects/DIGITALERSTP/primeraEntrega_FontaoAlejo/VentasNet/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-zyn81muvgq

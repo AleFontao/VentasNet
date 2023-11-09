@@ -1,0 +1,59 @@
+﻿@using VentasNet.Infra.DTO.Request;
+@model IEnumerable<ClienteRequest>
+@{
+	<div class="container mt-5">
+		<h2>Tabla de Clientes</h2>
+
+		@Html.Partial("AgregarCliente", new ClienteRequest())
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Domicilio</th>
+					<th>Provincia</th>
+					<th>Modificar</th>
+					<th>Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (ClienteRequest cliente in ViewBag.Cliente)
+				{
+					<tr>
+						<td>@cliente.IdCliente</td>
+						<td>@cliente.Nombre</td>
+						<td>@cliente.Apellido</td>
+						<td>@cliente.Domicilio</td>
+						<td>@cliente.Provincia</td>
+						<td>
+							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalModificarCliente_@cliente.IdCliente">Modificar</button>
+						</td>
+						<td>
+							<form asp-action="EliminarCliente" method="post">
+								<input type="hidden" name="Cuit" value="@cliente.Cuit" />
+								<button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+							</form>
+						</td>
+					</tr>
+					<div class="modal fade" id="modalModificarCliente_@cliente.IdCliente" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="modalLabel">Modificar Cliente</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									@Html.Partial("ModificarCliente", cliente)
+								</div>
+							</div>
+						</div>
+					</div>
+				}
+
+			</tbody>
+		</table>
+	</div>
+}

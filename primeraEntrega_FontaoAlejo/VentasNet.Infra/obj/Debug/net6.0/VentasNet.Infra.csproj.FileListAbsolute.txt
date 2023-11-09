@@ -1,0 +1,15 @@
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\obj\Debug\net6.0\VentasNet.Infra.csproj.AssemblyReference.cache
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\obj\Debug\net6.0\VentasNet.Infra.GeneratedMSBuildEditorConfig.editorconfig
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\obj\Debug\net6.0\VentasNet.Infra.AssemblyInfoInputs.cache
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\obj\Debug\net6.0\VentasNet.Infra.AssemblyInfo.cs
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\obj\Debug\net6.0\VentasNet.Infra.csproj.CoreCompileInputs.cache
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\bin\Debug\net6.0\VentasNet.Infra.deps.json
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\bin\Debug\net6.0\VentasNet.Infra.dll
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\bin\Debug\net6.0\VentasNet.Infra.pdb
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\bin\Debug\net6.0\VentasNet.Entity.dll
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\bin\Debug\net6.0\VentasNet.Entity.pdb
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\obj\Debug\net6.0\VentasNet.Infra.csproj.CopyComplete
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\obj\Debug\net6.0\VentasNet.Infra.dll
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\obj\Debug\net6.0\refint\VentasNet.Infra.dll
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\obj\Debug\net6.0\VentasNet.Infra.pdb
+F:\TELECOM\Ejercicios\primeraEntrega_FontaoAlejo\VentasNet.Infra\obj\Debug\net6.0\ref\VentasNet.Infra.dll

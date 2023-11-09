@@ -1,0 +1,51 @@
+﻿@{
+	ViewData["Title"] = "Login";
+	Layout = null; 
+}
+@model Usuario
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - TrabajoPractico1</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="card">
+			<div class="card-header">
+				<h2 class="text-center">Iniciar Sesión</h2>
+			</div>
+			<div class="card-body">
+				@if (TempData["Error"] != null)
+				{
+					<div class="alert alert-danger">@TempData["Error"]</div>
+				}
+
+				<form asp-action="IniciarSesion" method="post">
+					<div class="form-group">
+						<label asp-for="Email">Email/UserName</label>
+						<input asp-for="Email" class="form-control" />
+					</div>
+					<div class="form-group">
+						<label asp-for="Password">Contraseña</label>
+						<input asp-for="Password" type="password" class="form-control" />
+					</div>
+					<button type="submit" class="btn btn-primary">Iniciar sesión</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>

@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Lista de Productos";
+}
+@using VentasNet.Infra.DTO.Request
+@model IEnumerable<ProductoRequest>
+<div class="container mt-4">
+    <h2>Lista de Productos</h2>
+
+    @await Html.PartialAsync("ListaProducto")
+
+</div>

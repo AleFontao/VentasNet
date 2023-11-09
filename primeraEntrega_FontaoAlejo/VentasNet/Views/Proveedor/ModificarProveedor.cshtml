@@ -1,0 +1,23 @@
+﻿@using VentasNet.Infra.DTO.Request
+@model ProveedorRequest
+
+<form asp-action="ModificarProveedor" method="post">
+	<input type="hidden" name="IdProveedor" value="@Model.IdProveedor" />
+	<div class="form-group">
+		<label asp-for="RazonSocial"></label>
+		<input asp-for="RazonSocial" class="form-control" value="@Model.RazonSocial" />
+	</div>
+	<div class="form-group">
+		<label asp-for="Cuit"></label>
+		<input asp-for="Cuit" class="form-control" value="@Model.Cuit" />
+	</div>
+	<div class="form-group">
+		<label asp-for="Domicilio"></label>
+		<input asp-for="Domicilio" class="form-control" value="@Model.Domicilio" />
+	</div>
+	<div class="form-group">
+		<label asp-for="Provincia"></label>
+		<input asp-for="Provincia" class="form-control" value="@Model.Provincia" />
+	</div>
+	<button type="submit" class="btn btn-primary">Modificar</button>
+</form>

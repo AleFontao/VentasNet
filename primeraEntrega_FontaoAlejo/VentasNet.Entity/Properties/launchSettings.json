@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "VentasNet.Entity": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

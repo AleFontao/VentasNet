@@ -1,0 +1,86 @@
+﻿@using VentasNet.Infra.DTO.Request;
+@model IEnumerable<ProductoRequest>
+
+@{
+    ViewBag.Title = "Lista de Productos";
+    List<ProductoRequest> carrito = ViewBag.Carrito ?? new List<ProductoRequest>();
+}
+
+<div class="container mt-5">
+    <h2>Lista de Productos</h2>
+    <input type="text" id="filtroNombre" placeholder="Filtrar por nombre">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Codigo</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ProductoRequest producto in ViewBag.Producto)
+            {
+                <tr>
+                    <td>@producto.Id</td>
+                    <td>@producto.NombreProducto</td>
+                    <td>@producto.Descripcion</td>
+                    <td>@producto.ImporteProducto</td>
+                    <td>@producto.Codigo</td>
+                    <td>
+                        <button type="button" id="btnAgregarProducto" class="btn btn-danger btn-sm">Modificar</button>
+                    </td>
+                    <td>
+                        <form asp-controller="Venta" onclick="location.href='@Url.Action("AgregarProducto", "VentaController")'"  method="post">
+                            <input type="hidden" name="id" value="@producto.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Agregar a pedido</button>
+                        </form>
+                    </td>
+                </tr>
+                
+            }
+        </tbody>
+    </table>
+
+    <h2>Carrito de Compras</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Importe</th>
+                <!-- Otros campos relevantes -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in carrito)
+            {
+                <tr>
+                    <td>@item.NombreProducto</td>
+                    <td>@item.ImporteProducto</td>
+                    <!-- Otros campos relevantes -->
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("#filtroNombre").on("input", function () {
+                var filtro = $(this).val().toLowerCase();
+                $("#tablaProductos tbody tr").each(function () {
+                    var nombre = $(this).find("td:nth-child(2)").text().toLowerCase();
+                    if (nombre.includes(filtro)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+    </script>
+}
