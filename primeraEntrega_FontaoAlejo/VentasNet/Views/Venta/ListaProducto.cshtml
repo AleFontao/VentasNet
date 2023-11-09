@@ -3,22 +3,22 @@
 
 @{
     ViewBag.Title = "Lista de Productos";
-    List<Producto> carrito = ViewBag.Carrito ?? new List<Producto>();
+    List<Item> carrito = ViewBag.Carrito ?? new List<Item>();
 }
 
 <div class="container mt-5">
     <h2>Lista de Productos</h2>
-    <input type="text" id="filtroNombre" placeholder="Filtrar por nombre">
-    <table class="table">
+    <input type="text" id="filtroNombre" placeholder="Filtrar por nombre" class="form-control mb-3">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Precio</th>
-                <th>Codigo</th>
-                <th>Modificar</th>
-                <th>Eliminar</th>
+                <th>Código</th>
+                <th>Cantidad</th>
+                <th>Agregar</th>
             </tr>
         </thead>
         <tbody>
@@ -30,18 +30,20 @@
                     <td>@producto.Descripcion</td>
                     <td>@producto.ImporteProducto</td>
                     <td>@producto.Codigo</td>
-                    <td><button class="agregar-btn">Agregar</button></td>
+                    <td><input type="number" min="1" value="1" class="form-control cantidad-input" /></td>
+                    <td><button class="btn btn-primary agregar-btn">Agregar</button></td>
                 </tr>
             }
         </tbody>
     </table>
 
     <h2>Carrito de Compras</h2>
-    <table id="carrito" class="table">
+    <table id="carrito" class="table table-striped">
         <thead>
             <tr>
                 <th>Nombre</th>
                 <th>Importe</th>
+                <th>Cantidad</th>
             </tr>
         </thead>
         <tbody>
@@ -50,23 +52,21 @@
                 <tr>
                     <td>@item.NombreProducto</td>
                     <td>@item.ImporteProducto</td>
+                    <td>@item.Cantidad</td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
 
-
-
-
 <script>
     $(document).ready(function () {
-
         $(".agregar-btn").on("click", function () {
             var fila = $(this).closest("tr");
             var nombre = fila.find("td:eq(1)").text();
             var importe = fila.find("td:eq(3)").text();
-            $("#carrito tbody").append("<tr><td>" + nombre + "</td><td>" + importe + "</td></tr>");
+            var cantidad = fila.find(".cantidad-input").val();
+            $("#carrito tbody").append("<tr><td>" + nombre + "</td><td>" + importe + "</td><td>" + cantidad + "</td></tr>");
         });
     });
 </script>

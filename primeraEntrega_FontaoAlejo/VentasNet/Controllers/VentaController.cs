@@ -29,16 +29,6 @@ namespace VentasNet.Controllers
             ViewBag.Producto = _productos;
             return View();
         }
-        [HttpPost]
-        public IActionResult AgregarProducto(int id)
-        {
-       
-            var producto = _productoRepository.ObtenerById(id);
-            _carrito.Add(producto);
-            ViewBag.Carrito = _carrito;
-
-            return Ok();
-        }
-
+    
     }
 }
