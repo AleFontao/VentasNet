@@ -157,7 +157,7 @@
                     var importe = parseFloat($(this).find("td:eq(1)").text());
                     var cantidad = parseInt($(this).find("td:eq(2)").text());
                     var subtotal = parseFloat($(this).find("td:eq(3)").text());
-
+                    var idFormaDePago = document.getElementById("formaDePago").value;
                     elementosCarrito.push({
                         Producto: {
                             Id: 0,
@@ -166,7 +166,11 @@
                             Descripcion: "",
                             ImporteProducto: ""+importe,
                             Estado: true,
-                            Codigo: "0"
+                            Codigo: "0",
+                            
+                        },
+                        FormaDePago: {
+                            Id: idFormaDePago
                         },
                         Cantidad: cantidad,
                         SubtotalItem: subtotal

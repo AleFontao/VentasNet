@@ -15,8 +15,6 @@ namespace VentasNet.Entity.Data.Configurations
         {
             entity.HasKey(e => e.IdVenta);
 
-            entity.Property(e => e.IdVenta).ValueGeneratedNever();
-
             entity.Property(e => e.CantidadProductos)
                 .HasMaxLength(10)
                 .IsFixedLength();
@@ -28,6 +26,7 @@ namespace VentasNet.Entity.Data.Configurations
             entity.HasOne(d => d.FormaPagoNavigation)
                 .WithMany(p => p.Venta)
                 .HasForeignKey(d => d.FormaPago)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Venta_FormaDePagos");
 
             OnConfigurePartial(entity);

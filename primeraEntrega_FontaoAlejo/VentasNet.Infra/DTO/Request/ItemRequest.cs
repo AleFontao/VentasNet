@@ -12,5 +12,6 @@ namespace VentasNet.Infra.DTO.Request
         public ProductoRequest Producto { get; set; }
         public int Cantidad { get; set; }
         public int SubtotalItem { get; set; }
+        public FormaDePagoRequest FormaDePago { get; set; }
     }
 }

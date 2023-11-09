@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using VentasNet.Entity.Data;
+using VentasNet.Entity.Models;
 using VentasNet.Infra.DTO.Request;
 using VentasNet.Infra.DTO.Response;
 using VentasNet.Infra.Repository.Interfaz;
@@ -21,10 +22,31 @@ namespace VentasNet.Infra.Repository
             _mapper = mapper;
         }
 
-        public Response AgregarVenta(List<ItemRequest> entity)
-        {
-            Response response = new Response();
-            return response;
+        public Response AgregarVenta(List<ItemRequest> entity) 
+        { 
+        
+            Response ventaResponse = new Response();
+            try
+            {
+                Venta venta = new Venta();
+                venta.FormaPago = entity[0].FormaDePago.Id;
+                entity.ForEach(item =>
+                {
+                    venta.CantidadProductos += (Convert.ToInt64(venta.CantidadProductos + Convert.ToInt64(item.Cantidad)).ToString());
+                    venta.ImporteTotal = (Convert.ToInt64(venta.ImporteTotal) + Convert.ToInt64(item.SubtotalItem)).ToString();
+                });
+                _context.Venta.Add(venta);
+                _context.SaveChanges();
+                ventaResponse.TextMensaje = "Venta agregada.";
+                ventaResponse.Guardar = true;
+               
+            }
+            catch (Exception ex)
+            {
+                ventaResponse.TextMensaje = "Error al agregar el cliente.";
+                ventaResponse.Guardar = false;
+                Console.WriteLine(ex.ToString());
+            } return ventaResponse;
         }
     }
 }

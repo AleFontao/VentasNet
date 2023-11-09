@@ -15,7 +15,7 @@ namespace VentasNet.Entity.Models
         public int IdVenta { get; set; }
         public string ImporteTotal { get; set; }
         public string CantidadProductos { get; set; }
-        public int? FormaPago { get; set; }
+        public int FormaPago { get; set; }
 
         public virtual FormaDePagos FormaPagoNavigation { get; set; }
         public virtual ICollection<DetalleVenta> DetalleVenta { get; set; }
