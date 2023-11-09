@@ -37,6 +37,18 @@ namespace VentasNet.Infra.Repository
                 });
                 _context.Venta.Add(venta);
                 _context.SaveChanges();
+                int id = venta.IdVenta;
+                DetalleVenta detalle = new DetalleVenta();
+                entity.ForEach((item) =>
+                {
+                    detalle.IdProducto = item.Producto.Id;
+                    detalle.Cantidad = item.Cantidad;
+                    detalle.IdVenta = id;
+                    detalle.Subtotal = item.SubtotalItem;
+                    _context.DetalleVenta.Add(detalle);
+                    
+                });
+               _context.SaveChanges();
                 ventaResponse.TextMensaje = "Venta agregada.";
                 ventaResponse.Guardar = true;
                

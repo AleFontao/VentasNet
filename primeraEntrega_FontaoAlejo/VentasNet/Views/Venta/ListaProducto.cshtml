@@ -97,6 +97,7 @@
                 <th>Importe</th>
                 <th>Cantidad</th>
                 <th>Subtotal</th>
+                <th>Id</th>
             </tr>
         </thead>
         <tbody>
@@ -107,30 +108,39 @@
                     <td>@item.Producto.ImporteProducto</td>
                     <td>@item.Cantidad</td>
                     <td>@item.SubtotalItem</td>
+                    <td>@item.Producto.Id</td>
                 </tr>
             }
         </tbody>
     </table>
+    <div style="display: flex; justify-content: flex-end;">
+        <p id="totalCarrito"></p>
+    </div>
     <div id="alertaCarritoVacio" class="alert alert-warning" role="alert" style="display: none;">
         No se puede generar la venta sin productos.
     </div>
     <div id="alertaClienteVacio" class="alert alert-warning" role="alert" style="display: none;">
         Debe llenar algún campo para buscar al cliente.
-    </div>
-    <div id="detallesCliente"></div>
+	</div>
 
-    <div style="display: flex; justify-content: flex-end;">
-        <div style="display: flex; justify-content: flex-end;">
+
+
+
+    <div style="    display: flex;
+    justify-content: flex-end;
+    flex-direction: column; display: none;" id="seccionPago">
+			<div id="detallesCliente"></div>
             <label for="formaDePago">Forma de Pago:</label>
             <select id="formaDePago" class="form-control">
                 @foreach (var formaDePago in ViewBag.FormasDePago)
                 {
                     <option value="@formaDePago.Id">@formaDePago.Entidad @formaDePago.Descripcion</option>
                 }
-            </select>
-        </div>
+		       </select> 
         <button id="btnGenerarVenta" class="btn btn-primary">Generar venta</button>
-	</div>
+        </div>
+       
+
 
 </div>
 <script>
@@ -149,7 +159,7 @@
             var subtotalItem = importe * cantidad;
             totalCarrito += subtotalItem;
             $("#totalCarrito").text("Total a pagar: " + totalCarrito);
-            $("#carrito tbody").append("<tr><td>" + nombre + "</td><td>" + importe + "</td><td>" + cantidad + "</td><td>" + subtotalItem + "</td></tr>");
+            $("#carrito tbody").append("<tr><td>" + nombre + "</td><td>" + importe + "</td><td>" + cantidad + "</td><td>" + subtotalItem + "</td><td>" + id + "</td></tr>");
         }
         $("#btnBuscar").on("click", function () {
             var nombreBusqueda = $("#filtroNombre").val();
@@ -189,10 +199,11 @@
                     var importe = parseFloat($(this).find("td:eq(1)").text());
                     var cantidad = parseInt($(this).find("td:eq(2)").text());
                     var subtotal = parseFloat($(this).find("td:eq(3)").text());
+                    var idProducto = parseFloat($(this).find("td:eq(4)").text());
                     var idFormaDePago = document.getElementById("formaDePago").value;
                     elementosCarrito.push({
                         Producto: {
-                            Id: 0,
+                            Id: idProducto,
                             IdProveedor: 0,
                             NombreProducto: nombre,
                             Descripcion: "",
@@ -263,6 +274,11 @@
             var clienteSeleccionado = clientes.find(c => c.idCliente == idClienteSeleccionado);
             console.log(clienteSeleccionado);
             mostrarDetallesCliente(clienteSeleccionado);
+            if (clienteSeleccionado != null) {
+                $("#seccionPago").show(); 
+            } else {
+                $("#seccionPago").hide();  
+            }
         })
         function mostrarDetallesCliente(cliente) {
             var detallesClienteDiv = document.getElementById("detallesCliente");

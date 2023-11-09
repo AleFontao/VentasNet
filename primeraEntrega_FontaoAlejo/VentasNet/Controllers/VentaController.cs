@@ -43,6 +43,7 @@ namespace VentasNet.Controllers
         public IActionResult GenerarVenta([FromBody] List<ItemRequest> elementosCarrito)
         {
             _ventaRepository.AgregarVenta(elementosCarrito);
+           
             return Ok();
         }
     }
