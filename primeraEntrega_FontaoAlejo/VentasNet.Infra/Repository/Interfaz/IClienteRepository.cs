@@ -16,6 +16,6 @@ namespace VentasNet.Infra.Repository.Interfaz
 		Response Modificar(ClienteRequest entity);
 		Response Eliminar(ClienteRequest entity);
 		IEnumerable<ClienteRequest> ObtenerTodos();
-	
-	}
+        List<Cliente> ObtenerClienteByDato(ClienteBusquedaRequest clienteBusquedaRequest);
+    }
 }

@@ -84,6 +84,10 @@
                 <button type="button" class="btn btn-primary mt-4" id="btnBuscarCliente">Buscar</button>
 			</div>
 		</div>
+        <label for="dropdownClientes">Seleccionar Cliente:</label>
+        <select class="form-control" id="dropdownClientes" name="dropdownClientes">
+            <option value="">-- Seleccionar --</option>
+        </select>
 	</div>
     <h4>Carrito</h4>
     <table id="carrito" class="table table-striped">
@@ -225,6 +229,29 @@
 
             if (nombre || cuit || apellido) {
                 $("#alertaClienteVacio").fadeOut();
+                var clientePorBuscar = {
+                    Nombre: nombre,
+                    Apellido: apellido,
+                    Cuit: cuit
+                };
+
+                console.log(clientePorBuscar)
+                axios.get('/Cliente/ObtenerClienteByDato', { params: clientePorBuscar })
+                    .then(function (response) {
+                        console.log(response.data);
+                        var dropdown = document.getElementById("dropdownClientes");
+                       
+                        response.data.forEach(function (cliente) {
+                            var option = document.createElement("option");
+                            option.value = cliente.id;
+                            option.text = cliente.nombre + " " + cliente.apellido;
+                            dropdown.add(option);
+                        });
+                    })
+                    .catch(function (error) {
+                        console.error("Error al generar la venta:", error);
+
+                    });
             } else {
                 $("#alertaClienteVacio").fadeIn();
             }

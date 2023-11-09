@@ -133,6 +133,20 @@ namespace VentasNet.Infra.Repository
 			return clienteMapeado;
 		}
 
-
-	}
+        public List<Cliente> ObtenerClienteByDato(ClienteBusquedaRequest clienteBusquedaRequest)
+        {
+            var lista = _context.Cliente.Where(x => x.Estado != false).ToList();
+            List<Cliente> listadoClienteRequest = new List<Cliente>();
+            foreach (var item in lista)
+            {
+                if ((string.IsNullOrEmpty(clienteBusquedaRequest.Nombre) || item.Nombre == clienteBusquedaRequest.Nombre) &&
+                   (string.IsNullOrEmpty(clienteBusquedaRequest.Apellido) || item.Apellido == clienteBusquedaRequest.Apellido) &&
+                   (string.IsNullOrEmpty(clienteBusquedaRequest.Cuit) || item.Cuit == clienteBusquedaRequest.Cuit))
+                {
+                    listadoClienteRequest.Add(_mapper.Map<Cliente>(item));
+                }
+            }
+            return listadoClienteRequest;
+        }
+    }
 }

@@ -53,10 +53,10 @@ namespace TrabajoPractico1.Controllers
         }
 
         [HttpGet]
-        public IActionResult ObtenerClienteByCuit()
+        public List<Cliente> ObtenerClienteByDato(ClienteBusquedaRequest clienteBusquedaRequest)
         {
-            ViewBag.Cliente = _clienteRepository.ObtenerTodos();
-            return View();
+            var clientes = _clienteRepository.ObtenerClienteByDato(clienteBusquedaRequest);
+            return clientes;
         }
     }
 }
