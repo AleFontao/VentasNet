@@ -128,5 +128,16 @@ namespace VentasNet.Infra.Repository
 			Producto productoMapeado = _mapper.Map<Producto>(producto);
 			return productoMapeado;
 		}
-	}
+
+        public IEnumerable<ProductoRequest> ObtenerPorNombreLista(string nombre)
+        {
+			var productos = _context.Producto.Where(x => x.NombreProducto.StartsWith(nombre));
+            List<ProductoRequest> listadoProductoRequest = new List<ProductoRequest>();
+            foreach (var item in productos)
+            {
+                listadoProductoRequest.Add(_mapper.Map<ProductoRequest>(item));
+            }
+            return listadoProductoRequest;
+        }
+    }
 }

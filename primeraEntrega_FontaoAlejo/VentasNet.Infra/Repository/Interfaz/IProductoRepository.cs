@@ -12,7 +12,8 @@ namespace VentasNet.Infra.Repository.Interfaz
 	public interface IProductoRepository
 	{
 		Producto ObtenerById(int id);
-		Response Agregar(ProductoRequest entity);
+		IEnumerable<ProductoRequest> ObtenerPorNombreLista(string nombre);
+        Response Agregar(ProductoRequest entity);
 		Response Modificar(ProductoRequest entity);
 		Response Eliminar(ProductoRequest entity);
 		IEnumerable<ProductoRequest> ObtenerTodos();

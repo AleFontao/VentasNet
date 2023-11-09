@@ -7,9 +7,29 @@
 }
 
 <div class="container mt-5">
-    <h2>Lista de Productos</h2>
+
     <input type="text" id="filtroNombre" placeholder="Filtrar por nombre" class="form-control mb-3">
-    <table class="table table-striped">
+
+    <button class="btn btn-primary" id="btnBuscar">Buscar</button>
+    <div id="seccionResultadosBusqueda" style="display: none;">
+    <h2>Resultados de la Búsqueda</h2>
+    <table id="tablaResultados" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Código</th>
+                <th>Cantidad</th>
+                <th>Agregar</th>
+            </tr>
+        </thead>
+        <tbody id="resultados"></tbody>
+    </table>
+    <h2>Lista de todos los Productos</h2>
+  </div>
+    <table class="table table-striped" id="tablaProductos">
         <thead>
             <tr>
                 <th>Id</th>
@@ -68,5 +88,28 @@
             var cantidad = fila.find(".cantidad-input").val();
             $("#carrito tbody").append("<tr><td>" + nombre + "</td><td>" + importe + "</td><td>" + cantidad + "</td></tr>");
         });
+
+        $("#btnBuscar").on("click", function () {
+            var nombreBusqueda = $("#filtroNombre").val();
+
+            $.ajax({
+                url: '/Venta/BuscarPorNombre',
+                type: 'GET',
+                data: { nombre: nombreBusqueda },
+                success: function (data) {     
+                    console.log(data)
+                    $("#resultados").empty();
+                    $.each(data, function (index, producto) {
+                        console.log(producto.id)
+                        $("#resultados").append("<tr><td>" + producto.id + "</td><td>" + producto.nombreProducto + "</td><td>" + producto.descripcion + "</td><td>" + producto.importeProducto + "</td><td>" + producto.codigo + "</td><td><input type='number' min='1' value='1' class='form-control cantidad-input' /></td><td><button class='btn btn-primary agregar-btn'>Agregar</button></td></tr>");
+                    });
+                    $("#seccionResultadosBusqueda").toggle(data.length > 0);
+                },
+                error: function () {
+                    alert("Error al realizar la búsqueda.");
+                }
+            });
+        });
+
     });
 </script>

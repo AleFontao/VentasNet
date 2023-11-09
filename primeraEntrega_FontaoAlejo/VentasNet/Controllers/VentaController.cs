@@ -29,6 +29,11 @@ namespace VentasNet.Controllers
             ViewBag.Producto = _productos;
             return View();
         }
+
+        public IEnumerable<ProductoRequest> BuscarPorNombre(string nombre)
+        {
+            return _productoRepository.ObtenerPorNombreLista(nombre);
+        }
     
     }
 }
