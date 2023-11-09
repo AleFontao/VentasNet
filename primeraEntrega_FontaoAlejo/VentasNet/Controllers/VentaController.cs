@@ -2,6 +2,7 @@
 using Org.BouncyCastle.Security;
 using VentasNet.Entity.Models;
 using VentasNet.Infra.DTO.Request;
+using VentasNet.Infra.DTO.Response;
 using VentasNet.Infra.Repository;
 using VentasNet.Infra.Repository.Interfaz;
 
@@ -42,9 +43,15 @@ namespace VentasNet.Controllers
         [HttpPost]
         public IActionResult GenerarVenta([FromBody] List<ItemRequest> elementosCarrito)
         {
-            _ventaRepository.AgregarVenta(elementosCarrito);
-           
-            return Ok();
+            Response response = _ventaRepository.AgregarVenta(elementosCarrito);
+            if (response.Guardar)
+            {
+                return Ok(response.TextMensaje);
+            }
+            else
+            {
+                return BadRequest(response.TextMensaje);
+            }
         }
     }
 }

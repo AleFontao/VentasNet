@@ -122,7 +122,7 @@
     <div id="alertaClienteVacio" class="alert alert-warning" role="alert" style="display: none;">
         Debe llenar algún campo para buscar al cliente.
 	</div>
-
+    <div id="alertaVenta" class="alert" role="alert" style="display: none;"></div>
 
 
 
@@ -222,11 +222,12 @@
                 });
                 axios.post('/Venta/GenerarVenta', elementosCarrito)
                     .then(function (response) {
-                        console.log(response.data);
+                        var mensaje = response.data.exito ? 'Venta realizada con éxito.' : 'Error al generar la venta.';
+                        $("#alertaVenta").removeClass("alert-danger").addClass("alert-success").text(mensaje).show();
 
                     })
                     .catch(function (error) {
-                        console.error("Error al generar la venta:", error);
+                        $("#alertaVenta").removeClass("alert-success").addClass("alert-danger").text('Error al generar la venta.').show();
 
                     });
 
