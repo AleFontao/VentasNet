@@ -86,7 +86,7 @@
 		</div>
         <label for="dropdownClientes">Seleccionar Cliente:</label>
         <select class="form-control" id="dropdownClientes" name="dropdownClientes">
-            <option value="">-- Seleccionar --</option>
+            <option value=-1>-- Seleccionar --</option>
         </select>
 	</div>
     <h4>Carrito</h4>
@@ -117,7 +117,7 @@
     <div id="alertaClienteVacio" class="alert alert-warning" role="alert" style="display: none;">
         Debe llenar algún campo para buscar al cliente.
     </div>
-    
+    <div id="detallesCliente"></div>
 
     <div style="display: flex; justify-content: flex-end;">
         <div style="display: flex; justify-content: flex-end;">
@@ -149,7 +149,7 @@
             var subtotalItem = importe * cantidad;
             totalCarrito += subtotalItem;
             $("#totalCarrito").text("Total a pagar: " + totalCarrito);
-            $("#carrito tbody").append("<tr><td>" + nombre + "</td><td>" + importe + "</td><td>" + cantidad + "</td><td>" + subtotalItem +"</td></tr>" );
+            $("#carrito tbody").append("<tr><td>" + nombre + "</td><td>" + importe + "</td><td>" + cantidad + "</td><td>" + subtotalItem + "</td></tr>");
         }
         $("#btnBuscar").on("click", function () {
             var nombreBusqueda = $("#filtroNombre").val();
@@ -180,9 +180,9 @@
             if ($("#carrito tbody tr").length === 0) {
                 $("#alertaCarritoVacio").fadeIn();
             } else {
-              
-                 $("#alertaCarritoVacio").fadeOut();
-                
+
+                $("#alertaCarritoVacio").fadeOut();
+
                 var elementosCarrito = [];
                 $("#carrito tbody tr").each(function () {
                     var nombre = $(this).find("td:eq(0)").text();
@@ -196,10 +196,10 @@
                             IdProveedor: 0,
                             NombreProducto: nombre,
                             Descripcion: "",
-                            ImporteProducto: ""+importe,
+                            ImporteProducto: "" + importe,
                             Estado: true,
                             Codigo: "0",
-                            
+
                         },
                         FormaDePago: {
                             Id: idFormaDePago
@@ -208,25 +208,25 @@
                         SubtotalItem: subtotal
                     });
                     console.log(elementosCarrito)
-                });            
+                });
                 axios.post('/Venta/GenerarVenta', elementosCarrito)
                     .then(function (response) {
                         console.log(response.data);
-                       
+
                     })
                     .catch(function (error) {
                         console.error("Error al generar la venta:", error);
-                       
+
                     });
-               
+
             }
         });
-
+        var clientes = []
         $("#btnBuscarCliente").click(function () {
             var nombre = $("#nombreCliente").val();
             var cuit = $("#cuitCliente").val();
             var apellido = $("#apellidoCliente").val();
-
+            
             if (nombre || cuit || apellido) {
                 $("#alertaClienteVacio").fadeOut();
                 var clientePorBuscar = {
@@ -234,16 +234,17 @@
                     Apellido: apellido,
                     Cuit: cuit
                 };
-
+                clientes = []
                 console.log(clientePorBuscar)
                 axios.get('/Cliente/ObtenerClienteByDato', { params: clientePorBuscar })
                     .then(function (response) {
                         console.log(response.data);
                         var dropdown = document.getElementById("dropdownClientes");
-                       
+                        dropdown.options.length = 1;
                         response.data.forEach(function (cliente) {
+                            clientes.push(cliente);
                             var option = document.createElement("option");
-                            option.value = cliente.id;
+                            option.value = cliente.idCliente;
                             option.text = cliente.nombre + " " + cliente.apellido;
                             dropdown.add(option);
                         });
@@ -256,5 +257,26 @@
                 $("#alertaClienteVacio").fadeIn();
             }
         });
+
+        $("#dropdownClientes").change(function () {
+            var idClienteSeleccionado = $(this).val();
+            var clienteSeleccionado = clientes.find(c => c.idCliente == idClienteSeleccionado);
+            console.log(clienteSeleccionado);
+            mostrarDetallesCliente(clienteSeleccionado);
+        })
+        function mostrarDetallesCliente(cliente) {
+            var detallesClienteDiv = document.getElementById("detallesCliente");
+            var detallesHTML = `
+                <h3>Detalles del Cliente</h3>
+                <p>Nombre: ${cliente.nombre}</p>
+                <p>Apellido: ${cliente.apellido}</p>
+                <p>Cuit: ${cliente.cuit}</p>
+                <p>Domicilio: ${cliente.domicilio}</p>
+                <p>Activo: ${cliente.estado ? 'Si' : 'No'}</p>
+                <p>Fecha de Alta: ${cliente.fechaAlta}</p>
+                <!-- Agrega más detalles según sea necesario -->
+            `;
+            detallesClienteDiv.innerHTML = detallesHTML;
+        }
     });
 </script>
