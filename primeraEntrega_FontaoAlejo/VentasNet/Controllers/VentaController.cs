@@ -9,7 +9,7 @@ namespace VentasNet.Controllers
 {
     public class VentaController : Controller
     {
-        private List<ProductoRequest> _carrito = new List<ProductoRequest>();
+        private List<Producto> _carrito = new List<Producto>();
         private IEnumerable<ProductoRequest> _productos = new List<ProductoRequest>();
         private readonly IProductoRepository _productoRepository;
 
@@ -19,7 +19,7 @@ namespace VentasNet.Controllers
         }
         public IActionResult Venta()
         {
-            //ViewBag.Producto productos = _productoRepository.ObtenerTodos();
+           
             return View();
         }
 
@@ -32,14 +32,12 @@ namespace VentasNet.Controllers
         [HttpPost]
         public IActionResult AgregarProducto(int id)
         {
-            // Lógica para obtener el producto de la tabla Producto
-            var producto = _productos.First(p => p.Id == id);
-
-
+       
+            var producto = _productoRepository.ObtenerById(id);
             _carrito.Add(producto);
             ViewBag.Carrito = _carrito;
 
-            return RedirectToAction("Venta", "ListaProducto");
+            return Ok();
         }
 
     }

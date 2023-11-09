@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = "Lista de Productos";
-    List<ProductoRequest> carrito = ViewBag.Carrito ?? new List<ProductoRequest>();
+    List<Producto> carrito = ViewBag.Carrito ?? new List<Producto>();
 }
 
 <div class="container mt-5">
@@ -30,28 +30,18 @@
                     <td>@producto.Descripcion</td>
                     <td>@producto.ImporteProducto</td>
                     <td>@producto.Codigo</td>
-                    <td>
-                        <button type="button" id="btnAgregarProducto" class="btn btn-danger btn-sm">Modificar</button>
-                    </td>
-                    <td>
-                        <form asp-controller="Venta" onclick="location.href='@Url.Action("AgregarProducto", "VentaController")'"  method="post">
-                            <input type="hidden" name="id" value="@producto.Id" />
-                            <button type="submit" class="btn btn-danger btn-sm">Agregar a pedido</button>
-                        </form>
-                    </td>
+                    <td><button class="agregar-btn">Agregar</button></td>
                 </tr>
-                
             }
         </tbody>
     </table>
 
     <h2>Carrito de Compras</h2>
-    <table class="table">
+    <table id="carrito" class="table">
         <thead>
             <tr>
                 <th>Nombre</th>
                 <th>Importe</th>
-                <!-- Otros campos relevantes -->
             </tr>
         </thead>
         <tbody>
@@ -60,27 +50,23 @@
                 <tr>
                     <td>@item.NombreProducto</td>
                     <td>@item.ImporteProducto</td>
-                    <!-- Otros campos relevantes -->
                 </tr>
             }
         </tbody>
     </table>
 </div>
 
-@section scripts {
-    <script>
-        $(document).ready(function () {
-            $("#filtroNombre").on("input", function () {
-                var filtro = $(this).val().toLowerCase();
-                $("#tablaProductos tbody tr").each(function () {
-                    var nombre = $(this).find("td:nth-child(2)").text().toLowerCase();
-                    if (nombre.includes(filtro)) {
-                        $(this).show();
-                    } else {
-                        $(this).hide();
-                    }
-                });
-            });
+
+
+
+<script>
+    $(document).ready(function () {
+
+        $(".agregar-btn").on("click", function () {
+            var fila = $(this).closest("tr");
+            var nombre = fila.find("td:eq(1)").text();
+            var importe = fila.find("td:eq(3)").text();
+            $("#carrito tbody").append("<tr><td>" + nombre + "</td><td>" + importe + "</td></tr>");
         });
-    </script>
-}
+    });
+</script>
