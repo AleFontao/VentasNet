@@ -79,9 +79,17 @@
             }
         </tbody>
     </table>
+    <div id="alertaCarritoVacio" class="alert alert-warning" role="alert" style="display: none;">
+        El carrito está vacío. Agrega productos antes de generar una venta.
+    </div>
+
     <div style="display: flex; justify-content: flex-end;">
-		<p id="totalCarrito"></p>
+		<h4 id="totalCarrito"></h4>
 	</div>
+    <div style="display: flex; justify-content: flex-end;">
+        <button id="btnGenerarVenta" class="btn btn-primary">Generar venta</button>
+	</div>
+
 </div>
 <script>
     $(document).ready(function () {
@@ -125,6 +133,14 @@
                     console.error("Error al realizar la búsqueda:", error);
                     alert("Error al realizar la búsqueda.");
                 });
+        });
+
+        $("#btnGenerarVenta").on("click", function () {
+            if ($("#carrito tbody tr").length === 0) {
+                $("#alertaCarritoVacio").fadeIn();
+            } else {
+                alert("Venta generada correctamente.");
+            }
         });
     });
 </script>
