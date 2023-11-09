@@ -78,38 +78,43 @@
         </tbody>
     </table>
 </div>
-
 <script>
     $(document).ready(function () {
-        $(".agregar-btn").on("click", function () {
+        $(document).on("click", ".agregar-btn", function () {
             var fila = $(this).closest("tr");
+            var id = fila.find("td:eq(0)").text();
             var nombre = fila.find("td:eq(1)").text();
             var importe = fila.find("td:eq(3)").text();
             var cantidad = fila.find(".cantidad-input").val();
-            $("#carrito tbody").append("<tr><td>" + nombre + "</td><td>" + importe + "</td><td>" + cantidad + "</td></tr>");
+            agregarAlCarrito(id, nombre, importe, cantidad);
         });
-
+        function agregarAlCarrito(id, nombre, importe, cantidad) {
+            $("#carrito tbody").append("<tr><td>" + nombre + "</td><td>" + importe + "</td><td>" + cantidad + "</td></tr>");
+        }
         $("#btnBuscar").on("click", function () {
             var nombreBusqueda = $("#filtroNombre").val();
 
-            $.ajax({
-                url: '/Venta/BuscarPorNombre',
-                type: 'GET',
-                data: { nombre: nombreBusqueda },
-                success: function (data) {     
-                    console.log(data)
-                    $("#resultados").empty();
-                    $.each(data, function (index, producto) {
-                        console.log(producto.id)
-                        $("#resultados").append("<tr><td>" + producto.id + "</td><td>" + producto.nombreProducto + "</td><td>" + producto.descripcion + "</td><td>" + producto.importeProducto + "</td><td>" + producto.codigo + "</td><td><input type='number' min='1' value='1' class='form-control cantidad-input' /></td><td><button class='btn btn-primary agregar-btn'>Agregar</button></td></tr>");
-                    });
-                    $("#seccionResultadosBusqueda").toggle(data.length > 0);
-                },
-                error: function () {
-                    alert("Error al realizar la búsqueda.");
+            axios.get('/Venta/BuscarPorNombre', {
+                params: {
+                    nombre: nombreBusqueda
                 }
-            });
-        });
+            })
+                .then(function (response) {
+                    console.log(response.data);
+                    var resultados = response.data;
+                    var resultadosContainer = $("#resultados");
+                    resultadosContainer.empty();
 
+                    resultados.forEach(function (producto) {
+                        resultadosContainer.append("<tr><td>" + producto.id + "</td><td>" + producto.nombreProducto + "</td><td>" + producto.descripcion + "</td><td>" + producto.importeProducto + "</td><td>" + producto.codigo + "</td><td><input type='number' min='1' value='1' class='form-control cantidad-input' /></td><td><button class='btn btn-primary agregar-btn'>Agregar</button></td></tr>");
+                    });
+
+                    $("#seccionResultadosBusqueda").toggle(resultados.length > 0);
+                })
+                .catch(function (error) {
+                    console.error("Error al realizar la búsqueda:", error);
+                    alert("Error al realizar la búsqueda.");
+                });
+        });
     });
 </script>
