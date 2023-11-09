@@ -34,6 +34,7 @@ namespace VentasNet.Infra.Repository
                 {
                     venta.CantidadProductos += (Convert.ToInt64(venta.CantidadProductos) + Convert.ToInt64(item.Cantidad)).ToString();
                     venta.ImporteTotal = (Convert.ToInt64(venta.ImporteTotal) + Convert.ToInt64(item.SubtotalItem)).ToString();
+                    venta.IdCliente = item.IdCliente;   
                 });
                 _context.Venta.Add(venta);
                 _context.SaveChanges();

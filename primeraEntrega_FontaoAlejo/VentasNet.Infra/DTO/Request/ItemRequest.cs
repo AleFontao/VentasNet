@@ -13,5 +13,6 @@ namespace VentasNet.Infra.DTO.Request
         public int Cantidad { get; set; }
         public int SubtotalItem { get; set; }
         public FormaDePagoRequest FormaDePago { get; set; }
+        public int IdCliente { get; set; }
     }
 }

@@ -7,6 +7,11 @@ namespace VentasNet.Entity.Models
 {
     public partial class Cliente
     {
+        public Cliente()
+        {
+            Venta = new HashSet<Venta>();
+        }
+
         public int IdCliente { get; set; }
         public string RazonSocial { get; set; }
         public string Cuit { get; set; }
@@ -20,5 +25,7 @@ namespace VentasNet.Entity.Models
         public DateTime FechaAlta { get; set; }
         public DateTime? FechaBaja { get; set; }
         public int? IdUsuario { get; set; }
+
+        public virtual ICollection<Venta> Venta { get; set; }
     }
 }

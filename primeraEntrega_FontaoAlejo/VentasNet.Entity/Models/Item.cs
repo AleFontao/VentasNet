@@ -12,5 +12,6 @@ namespace VentasNet.Entity.Models
         public int Cantidad {  get; set; }
         public int SubtotalItem { get; set; }
         public FormaDePagos FormaDePagos { get; set;}
+        public Cliente Cliente { get; set; }
     }
 }

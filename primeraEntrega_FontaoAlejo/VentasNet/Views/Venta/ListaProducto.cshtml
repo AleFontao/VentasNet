@@ -201,6 +201,7 @@
                     var subtotal = parseFloat($(this).find("td:eq(3)").text());
                     var idProducto = parseFloat($(this).find("td:eq(4)").text());
                     var idFormaDePago = document.getElementById("formaDePago").value;
+                    var idCliente = document.getElementById("dropdownClientes").value;
                     elementosCarrito.push({
                         Producto: {
                             Id: idProducto,
@@ -216,7 +217,8 @@
                             Id: idFormaDePago
                         },
                         Cantidad: cantidad,
-                        SubtotalItem: subtotal
+                        SubtotalItem: subtotal,
+                        IdCliente: idCliente
                     });
                     console.log(elementosCarrito)
                 });

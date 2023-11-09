@@ -29,6 +29,11 @@ namespace VentasNet.Entity.Data.Configurations
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Venta_FormaDePagos");
 
+            entity.HasOne(d => d.IdClienteNavigation)
+                .WithMany(p => p.Venta)
+                .HasForeignKey(d => d.IdCliente)
+                .HasConstraintName("FK_Venta_Cliente");
+
             OnConfigurePartial(entity);
         }
 
