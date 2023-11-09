@@ -80,7 +80,7 @@
         </tbody>
     </table>
     <div id="alertaCarritoVacio" class="alert alert-warning" role="alert" style="display: none;">
-        El carrito está vacío. Agrega productos antes de generar una venta.
+        No se puede generar la venta sin productos.
     </div>
 
     <div style="display: flex; justify-content: flex-end;">
@@ -131,7 +131,7 @@
                 })
                 .catch(function (error) {
                     console.error("Error al realizar la búsqueda:", error);
-                    alert("Error al realizar la búsqueda.");
+                    alert("Error");
                 });
         });
 
@@ -139,7 +139,41 @@
             if ($("#carrito tbody tr").length === 0) {
                 $("#alertaCarritoVacio").fadeIn();
             } else {
-                alert("Venta generada correctamente.");
+              
+                 $("#alertaCarritoVacio").fadeOut();
+                
+                var elementosCarrito = [];
+                $("#carrito tbody tr").each(function () {
+                    var nombre = $(this).find("td:eq(0)").text();
+                    var importe = parseFloat($(this).find("td:eq(1)").text());
+                    var cantidad = parseInt($(this).find("td:eq(2)").text());
+                    var subtotal = parseFloat($(this).find("td:eq(3)").text());
+
+                    elementosCarrito.push({
+                        Producto: {
+                            Id: 0,
+                            IdProveedor: 0,
+                            NombreProducto: nombre,
+                            Descripcion: "",
+                            ImporteProducto: ""+importe,
+                            Estado: true,
+                            Codigo: "0"
+                        },
+                        Cantidad: cantidad,
+                        SubtotalItem: subtotal
+                    });
+                    console.log(elementosCarrito)
+                });            
+                axios.post('/Venta/GenerarVenta', elementosCarrito)
+                    .then(function (response) {
+                        console.log(response.data);
+                       
+                    })
+                    .catch(function (error) {
+                        console.error("Error al generar la venta:", error);
+                       
+                    });
+               
             }
         });
     });

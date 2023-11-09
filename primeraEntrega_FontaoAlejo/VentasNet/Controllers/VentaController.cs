@@ -19,13 +19,13 @@ namespace VentasNet.Controllers
         }
         public IActionResult Venta()
         {
-           
+
             return View();
         }
 
         public IActionResult ListaProducto()
         {
-            _productos =  _productoRepository.ObtenerTodos();
+            _productos = _productoRepository.ObtenerTodos();
             ViewBag.Producto = _productos;
             return View();
         }
@@ -34,6 +34,12 @@ namespace VentasNet.Controllers
         {
             return _productoRepository.ObtenerPorNombreLista(nombre);
         }
-    
+
+        [HttpPost]
+        public IActionResult GenerarVenta([FromBody] List<ItemRequest> elementosCarrito)
+        {
+            Console.WriteLine(elementosCarrito);
+            return Ok();
+        }
     }
 }
