@@ -17,10 +17,12 @@ namespace VentasNet.Entity.Data.Configurations
                 .HasName("PK_cliente");
 
             entity.Property(e => e.Apellido)
+                .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
             entity.Property(e => e.Cuit)
+                .IsRequired()
                 .HasMaxLength(11)
                 .IsUnicode(false)
                 .HasColumnName("CUIT");
@@ -39,6 +41,7 @@ namespace VentasNet.Entity.Data.Configurations
                 .IsUnicode(false);
 
             entity.Property(e => e.Nombre)
+                .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
@@ -48,6 +51,7 @@ namespace VentasNet.Entity.Data.Configurations
                 .IsUnicode(false);
 
             entity.Property(e => e.RazonSocial)
+                .IsRequired()
                 .HasMaxLength(100)
                 .IsUnicode(false);
 

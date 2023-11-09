@@ -7,6 +7,11 @@ namespace VentasNet.Entity.Models
 {
     public partial class Producto
     {
+        public Producto()
+        {
+            DetalleVenta = new HashSet<DetalleVenta>();
+        }
+
         public int Id { get; set; }
         public int IdProveedor { get; set; }
         public string NombreProducto { get; set; }
@@ -14,5 +19,7 @@ namespace VentasNet.Entity.Models
         public string ImporteProducto { get; set; }
         public bool Estado { get; set; }
         public string Codigo { get; set; }
+
+        public virtual ICollection<DetalleVenta> DetalleVenta { get; set; }
     }
 }

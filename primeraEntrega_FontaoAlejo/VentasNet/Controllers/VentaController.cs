@@ -12,10 +12,13 @@ namespace VentasNet.Controllers
         private List<Producto> _carrito = new List<Producto>();
         private IEnumerable<ProductoRequest> _productos = new List<ProductoRequest>();
         private readonly IProductoRepository _productoRepository;
-
-        public VentaController(IProductoRepository productoRepository)
+        private readonly IVentaRepository _ventaRepository;
+        private readonly IFormaDePagoRepository _formaDePagoRepository;
+        public VentaController(IProductoRepository productoRepository, IVentaRepository ventaRepository, IFormaDePagoRepository formaDePagoRepository)
         {
             _productoRepository = productoRepository;
+            _ventaRepository = ventaRepository;
+            _formaDePagoRepository = formaDePagoRepository;
         }
         public IActionResult Venta()
         {
@@ -26,6 +29,7 @@ namespace VentasNet.Controllers
         public IActionResult ListaProducto()
         {
             _productos = _productoRepository.ObtenerTodos();
+            ViewBag.FormasDePago = _formaDePagoRepository.ObtenerTodos();
             ViewBag.Producto = _productos;
             return View();
         }
@@ -38,7 +42,7 @@ namespace VentasNet.Controllers
         [HttpPost]
         public IActionResult GenerarVenta([FromBody] List<ItemRequest> elementosCarrito)
         {
-            Console.WriteLine(elementosCarrito);
+            _ventaRepository.AgregarVenta(elementosCarrito);
             return Ok();
         }
     }

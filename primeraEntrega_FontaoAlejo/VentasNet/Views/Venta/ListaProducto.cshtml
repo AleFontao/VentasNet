@@ -1,6 +1,5 @@
 ﻿@using VentasNet.Infra.DTO.Request;
-@model IEnumerable<ProductoRequest>
-
+@model IEnumerable<ProductoRequest>;
 @{
     ViewBag.Title = "Lista de Productos";
     List<Item> carrito = ViewBag.Carrito ?? new List<Item>();
@@ -86,7 +85,17 @@
     <div style="display: flex; justify-content: flex-end;">
 		<h4 id="totalCarrito"></h4>
 	</div>
+
     <div style="display: flex; justify-content: flex-end;">
+        <div style="display: flex; justify-content: flex-end;">
+            <label for="formaDePago">Forma de Pago:</label>
+            <select id="formaDePago" class="form-control">
+                @foreach (var formaDePago in ViewBag.FormasDePago)
+                {
+                    <option value="@formaDePago.Id">@formaDePago.Entidad @formaDePago.Descripcion</option>
+                }
+            </select>
+        </div>
         <button id="btnGenerarVenta" class="btn btn-primary">Generar venta</button>
 	</div>
 

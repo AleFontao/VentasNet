@@ -20,6 +20,22 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Comprobante]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[DetalleVenta]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[FormaDePagos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[MovimientosDeComprobantes]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Producto]",
          "ObjectType": 0
       },
@@ -29,6 +45,10 @@
       },
       {
          "Name": "[dbo].[Usuario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Venta]",
          "ObjectType": 0
       },
       {
@@ -49,6 +69,7 @@
    "UseLegacyPluralizer": false,
    "UseManyToManyEntity": false,
    "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
    "UseNoObjectFilter": false,
    "UseNodaTime": false,
    "UseNullableReferences": false,

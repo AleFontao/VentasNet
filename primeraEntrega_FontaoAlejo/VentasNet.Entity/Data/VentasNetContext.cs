@@ -11,24 +11,29 @@ namespace VentasNet.Entity.Data
 {
     public partial class VentasNetContext : DbContext
     {
+        public VentasNetContext()
+        {
+        }
+
         public VentasNetContext(DbContextOptions<VentasNetContext> options)
             : base(options)
         {
         }
 
         public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<Comprobante> Comprobante { get; set; }
+        public virtual DbSet<DetalleVenta> DetalleVenta { get; set; }
+        public virtual DbSet<FormaDePagos> FormaDePagos { get; set; }
+        public virtual DbSet<MovimientosDeComprobantes> MovimientosDeComprobantes { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<Proveedor> Proveedor { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<Venta> Venta { get; set; }
         public virtual DbSet<VwUsuario> VwUsuario { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new Configurations.ClienteConfiguration());
-            modelBuilder.ApplyConfiguration(new Configurations.ProductoConfiguration());
-            modelBuilder.ApplyConfiguration(new Configurations.ProveedorConfiguration());
-            modelBuilder.ApplyConfiguration(new Configurations.UsuarioConfiguration());
-            modelBuilder.ApplyConfiguration(new Configurations.VwUsuarioConfiguration());
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(VentasNetContext).Assembly);
 
             OnModelCreatingPartial(modelBuilder);
         }

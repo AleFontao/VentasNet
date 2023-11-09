@@ -19,6 +19,6 @@ namespace VentasNet.Entity.Models
         public bool Estado { get; set; }
         public DateTime FechaAlta { get; set; }
         public DateTime? FechaBaja { get; set; }
-        public int IdUsuario { get; set; }
+        public int? IdUsuario { get; set; }
     }
 }

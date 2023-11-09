@@ -20,6 +20,7 @@ namespace VentasNet.Entity.Data.Configurations
                 .IsUnicode(false);
 
             entity.Property(e => e.Cuit)
+                .IsRequired()
                 .HasMaxLength(11)
                 .IsUnicode(false)
                 .HasColumnName("CUIT");
@@ -47,6 +48,7 @@ namespace VentasNet.Entity.Data.Configurations
                 .IsUnicode(false);
 
             entity.Property(e => e.RazonSocial)
+                .IsRequired()
                 .HasMaxLength(100)
                 .IsUnicode(false);
 
