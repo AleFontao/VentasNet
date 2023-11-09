@@ -32,7 +32,7 @@ namespace VentasNet.Infra.Repository
                 venta.FormaPago = entity[0].FormaDePago.Id;
                 entity.ForEach(item =>
                 {
-                    venta.CantidadProductos += (Convert.ToInt64(venta.CantidadProductos + Convert.ToInt64(item.Cantidad)).ToString());
+                    venta.CantidadProductos += (Convert.ToInt64(venta.CantidadProductos) + Convert.ToInt64(item.Cantidad)).ToString();
                     venta.ImporteTotal = (Convert.ToInt64(venta.ImporteTotal) + Convert.ToInt64(item.SubtotalItem)).ToString();
                 });
                 _context.Venta.Add(venta);
