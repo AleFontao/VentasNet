@@ -222,12 +222,12 @@
                 });
                 axios.post('/Venta/GenerarVenta', elementosCarrito)
                     .then(function (response) {
-                        var mensaje = response.data.exito ? 'Venta realizada con éxito.' : 'Error al generar la venta.';
-                        $("#alertaVenta").removeClass("alert-danger").addClass("alert-success").text(mensaje).show();
+                        console.log(response)
+                        $("#alertaVenta").removeClass("alert-danger").addClass("alert-success").text(response.data).show();
 
                     })
                     .catch(function (error) {
-                        $("#alertaVenta").removeClass("alert-success").addClass("alert-danger").text('Error al generar la venta.').show();
+                        $("#alertaVenta").removeClass("alert-success").addClass("alert-danger").text(error.data).show();
 
                     });
 

@@ -38,13 +38,16 @@ namespace VentasNet.Infra.Repository
                 _context.Venta.Add(venta);
                 _context.SaveChanges();
                 int id = venta.IdVenta;
-                DetalleVenta detalle = new DetalleVenta();
+
                 entity.ForEach((item) =>
                 {
-                    detalle.IdProducto = item.Producto.Id;
-                    detalle.Cantidad = item.Cantidad;
-                    detalle.IdVenta = id;
-                    detalle.Subtotal = item.SubtotalItem;
+                    DetalleVenta detalle = new DetalleVenta
+                    {
+                        IdProducto = item.Producto.Id,
+                        Cantidad = item.Cantidad,
+                        IdVenta = id,
+                        Subtotal = item.SubtotalItem
+                    };
                     _context.DetalleVenta.Add(detalle);
                     
                 });
@@ -55,7 +58,7 @@ namespace VentasNet.Infra.Repository
             }
             catch (Exception ex)
             {
-                ventaResponse.TextMensaje = "Error al agregar el cliente.";
+                ventaResponse.TextMensaje = "Error al agregar la venta.";
                 ventaResponse.Guardar = false;
                 Console.WriteLine(ex.ToString());
             } return ventaResponse;
