@@ -64,22 +64,29 @@
                 <th>Nombre</th>
                 <th>Importe</th>
                 <th>Cantidad</th>
+                <th>Subtotal</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in carrito)
             {
                 <tr>
-                    <td>@item.NombreProducto</td>
-                    <td>@item.ImporteProducto</td>
+                    <td>@item.Producto.NombreProducto</td>
+                    <td>@item.Producto.ImporteProducto</td>
                     <td>@item.Cantidad</td>
+                    <td>@item.SubtotalItem</td>
                 </tr>
             }
         </tbody>
     </table>
+    <div style="display: flex; justify-content: flex-end;">
+		<p id="totalCarrito"></p>
+	</div>
 </div>
 <script>
     $(document).ready(function () {
+        var totalCarrito = 0;
+
         $(document).on("click", ".agregar-btn", function () {
             var fila = $(this).closest("tr");
             var id = fila.find("td:eq(0)").text();
@@ -89,7 +96,10 @@
             agregarAlCarrito(id, nombre, importe, cantidad);
         });
         function agregarAlCarrito(id, nombre, importe, cantidad) {
-            $("#carrito tbody").append("<tr><td>" + nombre + "</td><td>" + importe + "</td><td>" + cantidad + "</td></tr>");
+            var subtotalItem = importe * cantidad;
+            totalCarrito += subtotalItem;
+            $("#totalCarrito").text("Total a pagar: " + totalCarrito);
+            $("#carrito tbody").append("<tr><td>" + nombre + "</td><td>" + importe + "</td><td>" + cantidad + "</td><td>" + subtotalItem +"</td></tr>" );
         }
         $("#btnBuscar").on("click", function () {
             var nombreBusqueda = $("#filtroNombre").val();

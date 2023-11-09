@@ -8,13 +8,8 @@ namespace VentasNet.Entity.Models
 {
     public class Item
     {
-        public int Id { get; set; }
-        public int IdProveedor { get; set; }
-        public string NombreProducto { get; set; }
-        public string Descripcion { get; set; }
-        public string ImporteProducto { get; set; }
-        public bool Estado { get; set; }
-        public string Codigo { get; set; }
+        public Producto Producto;
         public int Cantidad {  get; set; }
+        public int SubtotalItem { get; set; }
     }
 }
