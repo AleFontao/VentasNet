@@ -6,10 +6,12 @@
 }
 
 <div class="container mt-5">
-
-    <input type="text" id="filtroNombre" placeholder="Filtrar por nombre" class="form-control mb-3">
-
-    <button class="btn btn-primary" id="btnBuscar">Buscar</button>
+    <div class="input-group mb-3">
+        <input type="text" id="filtroNombre" placeholder="Filtrar por nombre" class="form-control">
+        <div class="input-group-append">
+		    <button class="btn btn-outline-primary" type="button" id="btnBuscar">Buscar</button>
+        </div>
+	</div>
     <div id="seccionResultadosBusqueda" style="display: none;">
     <h2>Resultados de la Búsqueda</h2>
     <table id="tablaResultados" class="table table-striped">
@@ -26,8 +28,9 @@
         </thead>
         <tbody id="resultados"></tbody>
     </table>
+
+	</div>  
     <h2>Lista de todos los Productos</h2>
-  </div>
     <table class="table table-striped" id="tablaProductos">
         <thead>
             <tr>
@@ -55,8 +58,34 @@
             }
         </tbody>
     </table>
-
-    <h2>Carrito de Compras</h2>
+    <h2>Compra</h2>
+    <h4>Cliente</h4>
+	<div class="container mt-4">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="form-group">
+					<label for="nombreCliente">Nombre:</label>
+					<input type="text" class="form-control" id="nombreCliente" name="nombreCliente" placeholder="Ingrese el nombre del cliente" />
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label for="cuitCliente">CUIT:</label>
+					<input type="text" class="form-control" id="cuitCliente" name="cuitCliente" placeholder="Ingrese el CUIT del cliente" />
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label for="apellidoCliente">Apellido:</label>
+					<input type="text" class="form-control" id="apellidoCliente" name="apellidoCliente" placeholder="Ingrese el apellido del cliente" />
+				</div>
+			</div>
+			<div class="col-md-2">
+				<button type="button" class="btn btn-primary mt-4" id="btnBuscar">Buscar</button>
+			</div>
+		</div>
+	</div>
+    <h4>Carrito</h4>
     <table id="carrito" class="table table-striped">
         <thead>
             <tr>
@@ -81,10 +110,10 @@
     <div id="alertaCarritoVacio" class="alert alert-warning" role="alert" style="display: none;">
         No se puede generar la venta sin productos.
     </div>
-
-    <div style="display: flex; justify-content: flex-end;">
-		<h4 id="totalCarrito"></h4>
-	</div>
+    <div id="alertaClienteVacio" class="alert alert-warning" role="alert" style="display: none;">
+        Debe llenar algún campo para buscar al cliente.
+    </div>
+    
 
     <div style="display: flex; justify-content: flex-end;">
         <div style="display: flex; justify-content: flex-end;">
@@ -140,7 +169,6 @@
                 })
                 .catch(function (error) {
                     console.error("Error al realizar la búsqueda:", error);
-                    alert("Error");
                 });
         });
 
@@ -187,6 +215,18 @@
                        
                     });
                
+            }
+        });
+
+        $("#btnBuscar").click(function () {
+            var nombre = $("#nombreCliente").val();
+            var cuit = $("#cuitCliente").val();
+            var apellido = $("#apellidoCliente").val();
+
+            if (nombre || cuit || apellido) {
+                $("#alertaClienteVacio").fadeOut();
+            } else {
+                $("#alertaClienteVacio").fadeIn();
             }
         });
     });

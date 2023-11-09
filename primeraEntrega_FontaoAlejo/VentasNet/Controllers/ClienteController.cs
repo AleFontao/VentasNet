@@ -51,5 +51,12 @@ namespace TrabajoPractico1.Controllers
 
             return RedirectToAction("ListaClientes");
         }
+
+        [HttpGet]
+        public IActionResult ObtenerClienteByCuit()
+        {
+            ViewBag.Cliente = _clienteRepository.ObtenerTodos();
+            return View();
+        }
     }
 }

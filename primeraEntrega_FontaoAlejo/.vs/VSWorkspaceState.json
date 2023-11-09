@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\VentasNet",
-    "\\VentasNet.Entity",
-    "\\VentasNet.Infra"
+    "\\VentasNet.Infra",
+    "\\VentasNet\\Views",
+    "\\VentasNet\\Views\\Cliente",
+    "\\VentasNet\\Views\\Venta"
   ],
-  "SelectedNode": "\\VentasNet\\appsettings.Development.json",
+  "SelectedNode": "\\VentasNet\\Views\\Venta\\ListaProducto.cshtml",
   "PreviewInSolutionExplorer": false
 }
