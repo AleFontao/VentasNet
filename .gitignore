@@ -72,4 +72,6 @@ _[Ss]cripts
 *.dll
 *.nupkg
 *.ncrunchsolution
-*.dot[Cc]over
+*.dot[Cc]over.
+*.vsidx
+*.sqlite
